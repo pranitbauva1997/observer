@@ -1,65 +1,70 @@
-use crate::observe_field;
+use crate::field;
 use crate::observe_result;
 use std::collections::HashMap;
 
-pub fn observe_string(name: &str, value: &str) {
-    observe_field(name, json!(value));
+// TODO: let it accept either str or String
+pub fn observe_string(name: &'static str, value: &str) {
+    field(name, json!(value));
 }
 
-pub fn observe_bool(name: &str, value: bool) {
-    observe_field(name, json!(value))
+pub fn observe_json(name: &'static str, value: serde_json::Value) {
+    field(name, value)
 }
 
-pub fn observe_char(name: &str, value: char) {
-    observe_field(name, json!(value))
+pub fn observe_bool(name: &'static str, value: bool) {
+    field(name, json!(value))
 }
 
-pub fn observe_i8(name: &str, value: i8) {
-    observe_field(name, json!(value))
+pub fn observe_char(name: &'static str, value: char) {
+    field(name, json!(value))
 }
 
-pub fn observe_i16(name: &str, value: i16) {
-    observe_field(name, json!(value))
+pub fn observe_i8(name: &'static str, value: i8) {
+    field(name, json!(value))
 }
 
-pub fn observe_i32(name: &str, value: i32) {
-    observe_field(name, json!(value));
+pub fn observe_i16(name: &'static str, value: i16) {
+    field(name, json!(value))
 }
 
-pub fn observe_i64(name: &str, value: i64) {
-    observe_field(name, json!(value))
+pub fn observe_i32(name: &'static str, value: i32) {
+    field(name, json!(value));
 }
 
-pub fn observe_isize(name: &str, value: isize) {
-    observe_field(name, json!(value))
+pub fn observe_i64(name: &'static str, value: i64) {
+    field(name, json!(value))
 }
 
-pub fn observe_u8(name: &str, value: u8) {
-    observe_field(name, json!(value))
+pub fn observe_isize(name: &'static str, value: isize) {
+    field(name, json!(value))
 }
 
-pub fn observe_u16(name: &str, value: u16) {
-    observe_field(name, json!(value))
+pub fn observe_u8(name: &'static str, value: u8) {
+    field(name, json!(value))
 }
 
-pub fn observe_u32(name: &str, value: u32) {
-    observe_field(name, json!(value));
+pub fn observe_u16(name: &'static str, value: u16) {
+    field(name, json!(value))
 }
 
-pub fn observe_u64(name: &str, value: u64) {
-    observe_field(name, json!(value))
+pub fn observe_u32(name: &'static str, value: u32) {
+    field(name, json!(value));
 }
 
-pub fn observe_usize(name: &str, value: usize) {
-    observe_field(name, json!(value))
+pub fn observe_u64(name: &'static str, value: u64) {
+    field(name, json!(value))
 }
 
-pub fn observe_f64(name: &str, value: f64) {
-    observe_field(name, json!(value));
+pub fn observe_usize(name: &'static str, value: usize) {
+    field(name, json!(value))
 }
 
-pub fn observe_f32(name: &str, value: f32) {
-    observe_field(name, json!(value));
+pub fn observe_f64(name: &'static str, value: f64) {
+    field(name, json!(value));
+}
+
+pub fn observe_f32(name: &'static str, value: f32) {
+    field(name, json!(value));
 }
 
 pub fn observe_result_string(value: &str) {
